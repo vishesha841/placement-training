@@ -1,0 +1,23 @@
+from collections import deque
+def check(d):
+    while(len(d) !=1 ):
+        if(max(d[0], d[-1]) == d[0]):
+            worth = d.popleft()
+            if(worth >= max(d[0], d[-1])):
+                continue
+            else:         
+                return "No"          
+        else:
+            worth = d.pop()
+            if(worth >= max(d[0], d[-1])):
+                continue
+            else:
+                return "No"
+    return "Yes"
+
+for i in range(int(input())):
+    block_range = int(input())
+    d = deque()
+    [d.append(i) for i in list(map(int, input().split()))]
+    print(check(d))
+   
