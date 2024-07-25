@@ -1,0 +1,4 @@
+from collections import Counter
+
+x = Counter([input() for _ in range(int(input()))])
+print(len(x), ' '.join(map(str, x.values())), sep='\n')
