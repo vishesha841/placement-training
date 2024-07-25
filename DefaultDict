@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+d = defaultdict(list)
+n, m = map(int, input().split())
+[d['a'].append(input()) for N in range(n)]
+[d['b'].append(input()) for M in range(m)]
+for D in d['b']:
+    if D in d['a']:
+        [print(i + 1, end=' ') for i, j in enumerate(d['a']) if j == D]
+    else:
+        print(-1, end=' ')
+    print('')
